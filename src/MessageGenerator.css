@@ -1,78 +1,66 @@
 /* MessageGenerator.css */
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f3f4f6;
-  }
-  
-  .card {
-    background: white;
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
+    background: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 400px;
   }
   
   .title {
     font-size: 1.5rem;
     font-weight: bold;
+    margin-bottom: 15px;
   }
   
-  .form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
+  .label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
   }
   
-  .input {
+  .input, .select, .textarea {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    margin-top: 5px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
   }
   
+  .textarea {
+    height: 80px;
+    resize: none;
+  }
+  
   .button {
+    width: 100%;
     padding: 10px;
+    margin-top: 10px;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-  }
-  
-  .primary {
-    background-color: #2563eb;
     color: white;
   }
   
-  .secondary {
-    background-color: #3b82f6;
-    color: white;
+  .button-primary {
+    background-color: #007bff;
   }
   
-  .danger {
-    background-color: #ef4444;
-    color: white;
+  .button-warning {
+    background-color: #ffc107;
+    color: black;
   }
   
-  .message-box {
-    margin-top: 15px;
+  .button-danger {
+    background-color: #dc3545;
   }
   
-  .textarea {
-    width: 100%;
-    height: 80px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+  .button:hover {
+    opacity: 0.9;
   }
   
