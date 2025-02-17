@@ -34,7 +34,6 @@ const MessageGenerator = () => {
       .replace("#", name);
     setMessage(newMessage);
     navigator.clipboard.writeText(newMessage);
-    alert("메시지가 클립보드에 복사되었습니다!");
   };
 
   const startTimer = () => {
