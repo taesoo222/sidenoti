@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./MessageGenerator.css"; // CSS 파일 추가
 
 const MessageGenerator = () => {
   const [uniqueNumber, setUniqueNumber] = useState("");
@@ -43,16 +44,16 @@ const MessageGenerator = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow-lg text-center w-96">
-        <h1 className="text-xl font-bold">🚧 치즈도로공사 사이드공지</h1>
-        <form onSubmit={generateMessage} className="space-y-4 mt-4">
+    <div className="container">
+      <div className="card">
+        <h1 className="title">🚧 치즈도로공사 사이드공지</h1>
+        <form onSubmit={generateMessage} className="form">
           <input
             type="text"
             placeholder="압류대상 고유번호 입력"
             value={uniqueNumber}
             onChange={(e) => setUniqueNumber(e.target.value)}
-            className="border p-2 w-full rounded"
+            className="input"
             required
           />
           <input
@@ -60,32 +61,28 @@ const MessageGenerator = () => {
             placeholder="이름 입력"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="border p-2 w-full rounded"
+            className="input"
             required
           />
           <select
             value={choiceIndex}
             onChange={(e) => setChoiceIndex(e.target.value)}
-            className="border p-2 w-full rounded"
+            className="input"
           >
             {choices.map((choice, index) => (
               <option key={index} value={index}>{choice}</option>
             ))}
           </select>
-          <button type="submit" className="bg-blue-500 text-white p-2 w-full rounded">📋 메시지 생성</button>
+          <button type="submit" className="button primary">📋 메시지 생성</button>
         </form>
         {message && (
-          <div className="mt-4">
-            <textarea
-              readOnly
-              value={message}
-              className="border p-2 w-full h-24 rounded"
-            />
-            <div className="flex justify-between mt-2">
-              <button onClick={() => navigator.clipboard.writeText(message)} className="bg-blue-500 text-white p-2 rounded w-1/2 mr-1">
+          <div className="message-box">
+            <textarea readOnly value={message} className="textarea" />
+            <div className="button-group">
+              <button onClick={() => navigator.clipboard.writeText(message)} className="button secondary">
                 📋 클립보드에 복사
               </button>
-              <button onClick={resetForm} className="bg-red-500 text-white p-2 rounded w-1/2 ml-1">
+              <button onClick={resetForm} className="button danger">
                 🔄 처음으로 돌아가기
               </button>
             </div>
