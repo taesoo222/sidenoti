@@ -77,7 +77,7 @@ useEffect(() => {
 
 return (
   <div className="container">
-    <h1 className="title">🚧 치즈도로공사 사이드공지</h1>
+    <h1 className="title">🚧치즈도로공사 사이드공지</h1>
     <label className="label">압류대상 고유번호:</label>
     <input 
       type="text" 
